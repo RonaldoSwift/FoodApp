@@ -16,21 +16,26 @@ import UIKit
 
 internal enum Assets {
     
-   
+    internal enum Colours {
+        internal static let colorBotonNaranja = ColorAsset(name: "ColorBotonNaranja")
+        internal static let colorBlancoPantalla = ColorAsset(name: "ColorFondoPantalla")
+        internal static let colorPlomeado = ColorAsset(name: "ColorLetrasPequeñas")
+        internal static let colorBordeTextInput = ColorAsset(name: "BordeDeTextInput")
+        internal static let colorPlaceHolder = ColorAsset(name: "ColorPlaceHolder")
+    }
+    
+    internal enum Bienvenida {
+        internal static let primeraImagen = ImageAsset(name: "BienvenidaUno")
+        internal static let segundaImagen = ImageAsset(name: "BienvenidaDos")
+        internal static let terceraImagen = ImageAsset(name: "BienvenidaTres")
+    }
+    
+    internal enum Comun {
+        internal static let logoPrincipal = ImageAsset(name: "LogoPrincipal")
+        internal static let iconoGoogle = ImageAsset(name: "IconoGoogle")
+    }
     
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 // MARK: - Implementation Details

@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  FoodApp
+
+  Created by Ronaldo on 17/03/23.
+  
+*/
+
+"Bienvenida.SlideUno.Titulo" = "Ordena desde tu stiendas y vendedores favotios";
+"Bienvenida.SlideDos.Titulo" = "Elije desde un amplio ramo de comidas deiliciosas";
+"Bienvenida.SlideTres.Titulo" = "Disfruta tu pago y delivery instantaneo";

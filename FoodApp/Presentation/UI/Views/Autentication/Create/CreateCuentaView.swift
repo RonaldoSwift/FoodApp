@@ -17,7 +17,7 @@ struct CreateCuentaView: View {
     var body: some View {
         
         ZStack{
-            Color("ColorFondoPantalla").ignoresSafeArea()
+            Color(Assets.Colours.colorBlancoPantalla.name).ignoresSafeArea()
             VStack{
                 //PARTESUPERIOR EN COMPONENTES
                 ParteSuperior()
@@ -30,12 +30,12 @@ struct CreateCuentaView: View {
                 Text("Welcome friend, enter your details so lets get started in ordering food.")
                     .multilineTextAlignment(.leading)
                     .foregroundColor(Color.black)
-                    .foregroundColor(Color("ColorLetrasPequeñas"))
+                    .foregroundColor(Color(Assets.Colours.colorPlomeado.name))
                     .padding(.bottom,30)
                 
-                CapsulaParaColocarText(textoSuperior: "Email Address", textoDeAgua: "Enter email", email: $email)
-                CapsulaParaColocarText(textoSuperior: "Password", textoDeAgua: "Enter password", email: $password)
-                CapsulaParaColocarText(textoSuperior: "Confirm Password", textoDeAgua: "Confirm Password", email: $confirmPassword)
+                CapsulaParaColocarText(textoSuperior: "Email Address", textoDePlaceHolder: "Enter email", textoBinding: $email, texto: email)
+                CapsulaParaColocarText(textoSuperior: "Password", textoDePlaceHolder: "Enter password", textoBinding: $password, texto: password)
+                CapsulaParaColocarText(textoSuperior: "Confirm Password", textoDePlaceHolder: "Confirm Password", textoBinding: $confirmPassword, texto: confirmPassword)
                     .padding(.bottom,30)
 
                 

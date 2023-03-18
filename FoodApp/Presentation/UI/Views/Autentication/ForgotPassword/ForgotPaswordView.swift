@@ -14,7 +14,7 @@ struct ForgotPaswordView: View {
     
     var body: some View {
         ZStack{
-            Color("ColorFondoPantalla").ignoresSafeArea()
+            Color(Assets.Colours.colorBlancoPantalla.name).ignoresSafeArea()
             VStack{
                 ParteSuperior()
                 Text("Forgot password")
@@ -25,10 +25,10 @@ struct ForgotPaswordView: View {
                 Text("Enter your email address to request a password reset.")
                     .multilineTextAlignment(.center)
                     .foregroundColor(Color.black)
-                    .foregroundColor(Color("ColorLetrasPequeñas"))
+                    .foregroundColor(Color(Assets.Colours.colorPlomeado.name))
                     .padding(.bottom,40)
                 
-                CapsulaParaColocarText(textoSuperior: "Email Address", textoDeAgua: "Enter email address", email: $emailForgot)
+                CapsulaParaColocarText(textoSuperior: "Email Address", textoDePlaceHolder: "Enter email address", textoBinding: $emailForgot, texto: emailForgot)
                     .padding(.bottom,90)
                 
                 GoogleCapsula()

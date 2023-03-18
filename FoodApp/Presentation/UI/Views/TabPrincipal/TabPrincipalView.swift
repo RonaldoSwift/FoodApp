@@ -25,7 +25,6 @@ struct TabPrincipalView: View {
             }, label: {
                 Image("LogoPrincipal")
             })
-                
         )
         .sheet(isPresented: $mostrarBottomSheet) {
             Button {
@@ -33,10 +32,8 @@ struct TabPrincipalView: View {
             } label: {
                 Text("Cerrar Session")
             }
-
         }
     }
-        
 }
 
 struct TabPrincipalView_Previews: PreviewProvider {

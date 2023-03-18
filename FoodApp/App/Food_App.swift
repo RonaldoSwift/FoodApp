@@ -9,6 +9,7 @@ import SwiftUI
 
 @main
 struct Food_App: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     let persistenceController = PersistenceController.shared
     @ObservedObject var appSharedViewModel: AppSharedViewModel = AppSharedViewModel()
     

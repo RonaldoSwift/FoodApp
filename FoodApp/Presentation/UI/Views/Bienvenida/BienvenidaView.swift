@@ -13,15 +13,26 @@ struct BienvenidaView: View {
     @State private var irALoginView: Bool = false
     
     var modelos: [BienvenidaModelo] = [
-        BienvenidaModelo.init(id: "1", titulo: "Order from your favourite stores or vendors", imagen: "BienvenidaUno"),
-        BienvenidaModelo.init(id: "2", titulo: "Choose from a wide range of delicious meals", imagen: "BienvenidaDos"),
-        BienvenidaModelo.init(id: "3", titulo: "Enjoy instant delivery and payment", imagen: "BienvenidaTres")
+        BienvenidaModelo.init(
+            id: "1",
+            titulo: L10n.Bienvenida.tituloSlideUno,
+            imagen: Assets.Bienvenida.primeraImagen.image),
+        
+        BienvenidaModelo.init(
+            id: "2",
+            titulo: L10n.Bienvenida.tituloSlideDos,
+            imagen: Assets.Bienvenida.segundaImagen.image),
+        
+        BienvenidaModelo.init(
+            id: "3",
+            titulo: L10n.Bienvenida.tituloSlideTres,
+            imagen: Assets.Bienvenida.terceraImagen.image)
     ]
     
     var body: some View {
         NavigationView{
             ZStack{
-                Color("ColorFondoPantalla").ignoresSafeArea()
+                Color(Assets.Colours.colorBlancoPantalla.name).ignoresSafeArea()
                 VStack{
                     ParteSuperior()
                     
@@ -68,7 +79,7 @@ struct BienvenidaView: View {
                 .foregroundColor(Color.black)
                 .multilineTextAlignment(.center)
                 .padding(.bottom, 10)
-            Image(bienvenidaModelo.imagen)
+            Image(uiImage: bienvenidaModelo.imagen)
                 .resizable()
                 .scaledToFit()
         }

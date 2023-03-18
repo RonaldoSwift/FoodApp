@@ -12,7 +12,7 @@ func ParteSuperior() -> some  View {
     return  HStack{
         Spacer()
         Spacer()
-        Image("LogoPrincipal")
+        Image(uiImage: Assets.Comun.logoPrincipal.image)
             .resizable()
             .scaledToFit()
             .frame(width: 30,height: 20)
@@ -27,35 +27,40 @@ func ParteSuperior() -> some  View {
     }
 }
 
-func CapsulaParaColocarText(textoSuperior:String,textoDeAgua: String,email: Binding<String>) -> some View{
+func CapsulaParaColocarText(textoSuperior:String, textoDePlaceHolder: String,
+                            textoBinding: Binding<String>, texto: String) -> some View{
     return VStack{
         Text(textoSuperior)
             .foregroundColor(Color.black)
-            .padding(.trailing,200)
-            .multilineTextAlignment(.leading)
-        TextField(textoDeAgua, text: email)
+            .font(.system(size: 14))
+            .frame(maxWidth: .infinity,alignment: .leading)
+        
+        TextField("", text: textoBinding)
+            .placeholder(when: texto.isEmpty, placeholder: {
+                Text(textoDePlaceHolder)
+                    .foregroundColor(Color(Assets.Colours.colorPlaceHolder.name))
+            })
             .padding()
             .foregroundColor(Color.black)
             .background(
-                Capsule()
-                    .inset(by: 2)
-                    .stroke(Color.gray, lineWidth: 2)
-                    .frame(width: 334, height: 50)
+                RoundedRectangle(cornerRadius: 15)
+                    .stroke(Color(Assets.Colours.colorBordeTextInput.name), lineWidth: 1)
+                    .frame(height: 50)
+                    .background(Color.white)
+
             )
-            .clipShape(Capsule())
-        
     }
 }
 
 func GoogleCapsula() -> some View{
     return HStack{
-        Image("IconoGoogle")
+        Image(uiImage: Assets.Comun.iconoGoogle.image)
             .resizable()
             .scaledToFit()
             .frame(width: 20,height: 20)
         Text("Sign-in with Google")
             .underline(true, color: Color.black)
-
+        
     }
     .padding()
     .foregroundColor(Color.black)
@@ -71,7 +76,7 @@ func CapsulaNaranja(textoDelBoton:String, clickEnBoton: @escaping () -> Void ) -
             .padding()
             .frame(width: 335,height: 51)
             .foregroundColor(Color.white)
-            .background(Color("ColorBotonNaranja"))
+            .background(Color(Assets.Colours.colorBotonNaranja.name))
             .cornerRadius(20)
     }
 }

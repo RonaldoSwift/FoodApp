@@ -9,17 +9,25 @@ import SwiftUI
 
 struct NewPasswordView: View {
     var body: some View {
-        VStack{
-            
-            NavigationLink {
-                TabPrincipalView()
-            } label: {
-                Text("Aceptar")
+        ZStack{
+            Color(Assets.Colours.colorBlancoPantalla.name).ignoresSafeArea()
+            VStack{
+                
+                Text("hello")
+                    .padding()
+                    .foregroundColor(Color.black)
+                
+                
+                NavigationLink {
+                    TabPrincipalView()
+                } label: {
+                    Text("Aceptar")
+                }
+                
+                
             }
-
-
+            .navigationTitle("Nuevo Password")
         }
-        .navigationTitle("Nuevo Password")
     }
 }
 

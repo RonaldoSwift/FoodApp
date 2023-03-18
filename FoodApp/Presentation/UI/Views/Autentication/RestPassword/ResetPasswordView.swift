@@ -12,7 +12,7 @@ struct ResetPasswordView: View {
     
     var body: some View {
         ZStack{
-            Color("ColorFondoPantalla").ignoresSafeArea()
+            Color(Assets.Colours.colorBlancoPantalla.name).ignoresSafeArea()
             VStack{
                 ParteSuperior()
                     .padding(.bottom,90)
@@ -25,7 +25,7 @@ struct ResetPasswordView: View {
                 Text("A reset code has been sent to your email")
                     .multilineTextAlignment(.center)
                     .foregroundColor(Color.black)
-                    .foregroundColor(Color("ColorLetrasPequeñas"))
+                    .foregroundColor(Color(Assets.Colours.colorPlomeado.name))
                     .padding(.bottom,30)
                 
                 Text("Enter code")
