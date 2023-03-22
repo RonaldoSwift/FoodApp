@@ -1,23 +1,23 @@
 //
-//  LoginViewModel.swift
+//  CreateCuentaViewModel.swift
 //  FoodApp
 //
-//  Created by Ronaldo on 17/03/23.
+//  Created by Ronaldo on 21/03/23.
 //
 
 import FirebaseAuth
 import Foundation
 
-class LoginViewModel: ObservableObject{
-    
+class CreateCuentaViewModel: ObservableObject{
     @Published var irATabPrincipal: Bool = false
-    @Published var mostrarErrorAlert: Bool = false
     @Published var estaCargando: Bool = false
+    @Published var mostrarErrorAlert: Bool = false
+    @Published var irARegister: Bool = false
     
-    func signIn(email:String, password:String){
+    func signUp(email: String, pasword: String) {
         estaCargando = true
-        Auth.auth().signIn(withEmail: email, password: password){[self] _, error in
-            if let errorNulo = error {
+        Auth.auth().createUser(withEmail: email, password: pasword) { [self] _, error in
+            if let errorNoNulo = error {
                 mostrarErrorAlert = true
                 estaCargando = false
             } else {

@@ -5,7 +5,56 @@
   Created by Ronaldo on 17/03/23.
   
 */
-
+//Bienvenida
 "Bienvenida.SlideUno.Titulo" = "Order from your favorite stores or vendors";
 "Bienvenida.SlideDos.Titulo" = "Choose from a wide range of delicius meals";
 "Bienvenida.SlideTres.Titulo" = "Enjoy instant delivery and payment";
+
+//Login
+"Login.Titulo" = "Login to yuor account";
+"Login.Concepto" = "Good to see you again, enter your details below to continue ordering.";
+"Login.CapsulaSuperio" = "Email Address";
+"Login.LetraDeAgua" = "Enter email";
+"Login.CapsulaDosSuperior" = "Password";
+"Login.LetraDeAguaDos" = "Enter Password";
+"Login.CapsulaNaranja" = "Create an account";
+"Login.LetraRoja" = "Login to my account";
+
+//Create
+"Create.Titulo" = "Create an account";
+"Create.Concepto" = "Welcome friend, enter your details so lets get started in ordering food.";
+"Create.CapsulaSuperior" = "Email Address";
+"Create.LetraAgua" = "Enter email";
+"Create.CapsulaDosSuperior" = "Password";
+"Create.LetraDeAguaDos" = "Enter password";
+"Create.CapsulaTresSuperior" = "Confirm Password";
+"Create.LetraDeAguaTres" = "Confirm Password";
+"Create.CapsulaNaranja" = "Create an account";
+"Create.LetraInferior" = "Login to my account";
+
+//Forgot
+"Forgot.Titulo" = "Forgot password";
+"Forgot.Concepto" = "Enter your email address to request a password reset.";
+"Forgot.Email" = "Email Address";
+"Forgot.LetraDeAgua" = "Enter email address";
+"Forgot.Reiniciar" = "Reiniciar Contraseña";
+"Forgot.LetraRoja" = "Login to my account";
+
+//Rest
+"Reset.Titulo" = "Reset Password";
+"Reset.Concepto" = "A reset code has been sent to your email";
+"Reset.Code" = "Enter code";
+"Reset.CapsulaNaranja" = "Change new password";
+
+//New
+"New.Titulo" = "New Password";
+"New.Concepto" = "You can add the new password";
+"New.capsulaSuperior" = "New password";
+"New.letraAgua" = "Password";
+"New.capsulaSuperiorDos" = "Confirm password";
+"New.letraAguaDos" = "Confirm password";
+"New.capsulaNaranja" = "Create";
+
+
+//Comun
+"Comun.LetraGoogle" = "Sign-in with Google";

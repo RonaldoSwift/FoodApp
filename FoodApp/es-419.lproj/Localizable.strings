@@ -1,11 +1,62 @@
 /* 
-  Localizable.strings
-  FoodApp
+ Localizable.strings
+ FoodApp
+ 
+ Created by Ronaldo on 17/03/23.
+ 
+ */
 
-  Created by Ronaldo on 17/03/23.
-  
-*/
-
+//Bienvenida
 "Bienvenida.SlideUno.Titulo" = "Ordena desde tu stiendas y vendedores favotios";
 "Bienvenida.SlideDos.Titulo" = "Elije desde un amplio ramo de comidas deiliciosas";
 "Bienvenida.SlideTres.Titulo" = "Disfruta tu pago y delivery instantaneo";
+
+
+//Login
+"Login.Titulo" = "Acceder a su cuenta";
+"Login.Concepto" = "Me alegro de verle de nuevo, introduzca sus datos a continuación para continuar con el pedido.";
+"Login.CapsulaSuperio" = "Dirección de correo electrónico";
+"Login.LetraDeAgua" = "Introducir correo electrónico";
+"Login.CapsulaDosSuperior" = "Contraseña";
+"Login.LetraDeAguaDos" = "Introducir contraseña";
+"Login.CapsulaNaranja" = "Crear una cuenta";
+"Login.LetraRoja" = "Acceder a mi cuenta";
+
+//Create
+"Create.Titulo" = "Crear una cuenta";
+"Create.Concepto" = "Bienvenido amigo, introduce tus datos y empecemos a pedir comida.";
+"Create.CapsulaSuperior" = "Dirección de correo electrónico";
+"Create.LetraAgua" = "Introducir correo electrónico";
+"Create.CapsulaDosSuperior" = "Contraseña";
+"Create.LetraDeAguaDos" = "Introduzca la contraseña";
+"Create.CapsulaTresSuperior" = "Confirmar contraseña";
+"Create.LetraDeAguaTres" = "Confirmar contraseña";
+"Create.CapsulaNaranja" = "Crear una cuenta";
+"Create.LetraInferior" = "Acceder a mi cuenta";
+
+//Forgot
+"Forgot.Titulo" = "Contraseña olvidada";
+"Forgot.Concepto" = "Introduzca su dirección de correo electrónico para solicitar un restablecimiento de contraseña.";
+"Forgot.Email" = "Dirección de correo electrónico";
+"Forgot.LetraDeAgua" = "Introduzca la dirección de correo electrónico";
+"Forgot.Reiniciar" = "Reset Password";
+"Forgot.LetraRoja" = "Acceder a mi cuenta";
+
+//Rest
+"Reset.Titulo" = "Restablecer contraseña";
+"Reset.Concepto" = "Se ha enviado un código de reinicio a tu correo electrónico";
+"Reset.Code" = "Introduzca el código";
+"Reset.CapsulaNaranja" = "Cambiar nuevo password";
+
+//New
+"New.Titulo" = "Nueva Contraseña";
+"New.Concepto" = "Puede agregar la nueva contraseña";
+"New.capsulaSuperior" = "Nueva contraseña";
+"New.letraAgua" = "Contraseña";
+"New.capsulaSuperiorDos" = "Confirmar constraseña";
+"New.letraAguaDos" = "Confirmar constraseña";
+"New.capsulaNaranja" = "Crear";
+
+//Comun
+"Comun.LetraGoogle" = "Iniciar sesión con Google";
+

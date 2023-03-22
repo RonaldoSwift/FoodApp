@@ -58,7 +58,7 @@ func GoogleCapsula() -> some View{
             .resizable()
             .scaledToFit()
             .frame(width: 20,height: 20)
-        Text("Sign-in with Google")
+        Text(L10n.Comun.NombreGoogle)
             .underline(true, color: Color.black)
         
     }

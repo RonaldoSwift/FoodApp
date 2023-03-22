@@ -14,21 +14,22 @@ struct ResetPasswordView: View {
         ZStack{
             Color(Assets.Colours.colorBlancoPantalla.name).ignoresSafeArea()
             VStack{
-                ParteSuperior()
-                    .padding(.bottom,90)
-                
-                Text("Reset password")
-                    .font(.title)
-                    .bold()
-                    .multilineTextAlignment(.leading)
-                    .foregroundColor(Color.black)
-                Text("A reset code has been sent to your email")
+                Text(L10n.Reset
+                    .titulo)
+                .font(.title)
+                .bold()
+                .multilineTextAlignment(.leading)
+                .foregroundColor(Color.black)
+                .padding(.bottom,30)
+                .padding(.top,100)
+                Text(L10n.Reset.concepto)
                     .multilineTextAlignment(.center)
                     .foregroundColor(Color.black)
                     .foregroundColor(Color(Assets.Colours.colorPlomeado.name))
                     .padding(.bottom,30)
                 
-                Text("Enter code")
+                Text(L10n.Reset.code)
+                    .foregroundColor(Color.black)
                 
                 HStack{
                     Button {
@@ -64,12 +65,28 @@ struct ResetPasswordView: View {
                 }
                 .keyboardType(.numberPad)
                 
-                CapsulaNaranja(textoDelBoton: "Cambiar nuevo password") {
+                CapsulaNaranja(textoDelBoton: L10n.Reset.capsulaNaranja) {
                     irANewPaswordView = true
                 }
+                Spacer()
             }
             .padding()
             .navigationBarBackButtonHidden(true)
+            .navigationBarItems(trailing:
+                                    Text("Cancel")
+                .foregroundColor(Color.red)
+                .underline(true, color: Color.red)
+            )
+            .toolbar(content: {
+                ToolbarItem(placement: .principal) {
+                    Image(uiImage: Assets.Comun.logoPrincipal.image)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 34)
+                }
+            })
+            .padding(EdgeInsets(top: 0, leading: 30, bottom: 0, trailing: 30))
+            
             NavigationLink(destination: NewPasswordView(), isActive: $irANewPaswordView) {
                 EmptyView()
             }

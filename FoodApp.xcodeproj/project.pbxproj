@@ -16,6 +16,7 @@
 		D12091C829C52DF200F04C0A /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = D12091C729C52DF200F04C0A /* FirebaseAnalyticsWithoutAdIdSupport */; };
 		D12091CB29C52EA700F04C0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12091CA29C52EA700F04C0A /* AppDelegate.swift */; };
 		D12091CD29C5351800F04C0A /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12091CC29C5351800F04C0A /* LoginViewModel.swift */; };
+		D18B0EF629CA8C0F0092F7E5 /* CreateCuentaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18B0EF529CA8C0F0092F7E5 /* CreateCuentaViewModel.swift */; };
 		D1B0DCCA29C132A5003A074A /* Food_App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B0DCC929C132A5003A074A /* Food_App.swift */; };
 		D1B0DCCE29C132A9003A074A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1B0DCCD29C132A9003A074A /* Assets.xcassets */; };
 		D1B0DCD129C132A9003A074A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1B0DCD029C132A9003A074A /* Preview Assets.xcassets */; };
@@ -65,6 +66,7 @@
 		D12091CA29C52EA700F04C0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D12091CC29C5351800F04C0A /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		D120BA3329C37A25006E756F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		D18B0EF529CA8C0F0092F7E5 /* CreateCuentaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCuentaViewModel.swift; sourceTree = "<group>"; };
 		D1B0DCC629C132A5003A074A /* FoodApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1B0DCC929C132A5003A074A /* Food_App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food_App.swift; sourceTree = "<group>"; };
 		D1B0DCCD29C132A9003A074A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -312,6 +314,7 @@
 			isa = PBXGroup;
 			children = (
 				D1D7FFD629C169CA0020033D /* CreateCuentaView.swift */,
+				D18B0EF529CA8C0F0092F7E5 /* CreateCuentaViewModel.swift */,
 			);
 			path = Create;
 			sourceTree = "<group>";
@@ -516,6 +519,7 @@
 				D1B333AD29C3CB04002D92B2 /* PagingView.swift in Sources */,
 				D1D7FFDD29C212D60020033D /* TabPrincipalView.swift in Sources */,
 				D10BB78E29C678880074C6C6 /* Extension.swift in Sources */,
+				D18B0EF629CA8C0F0092F7E5 /* CreateCuentaViewModel.swift in Sources */,
 				D1D7FFD729C169CA0020033D /* CreateCuentaView.swift in Sources */,
 				D1B0DCCA29C132A5003A074A /* Food_App.swift in Sources */,
 				D1B333B729C3E3DB002D92B2 /* L10n.swift in Sources */,

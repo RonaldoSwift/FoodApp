@@ -34,8 +34,6 @@ struct BienvenidaView: View {
             ZStack{
                 Color(Assets.Colours.colorBlancoPantalla.name).ignoresSafeArea()
                 VStack{
-                    ParteSuperior()
-                    
                     //Imagenes
                     PagingView(index: $index.animation(), maxIndex: modelos.count - 1) {
                         ForEach(self.modelos, id: \.id) { (bienvenidaModelo: BienvenidaModelo) in
@@ -48,8 +46,6 @@ struct BienvenidaView: View {
                     PageControlView(index: $index, maxIndex: modelos.count - 1)
                     
                     
-                    Spacer()
-                    
                     CapsulaNaranja(textoDelBoton: "Create an account") {
                         irACreateCuentaView = true
                     }
@@ -57,9 +53,25 @@ struct BienvenidaView: View {
                     LetraInferiorButton(textoDelBoton: "Login") {
                         irALoginView = true
                     }
+                    .padding(.bottom,130)
                 }
                 .padding()
                 .navigationBarTitleDisplayMode(.inline)
+                .navigationBarItems(trailing:
+                    Text("Skip")
+                    .foregroundColor(Color.red)
+                    .underline(true, color: Color.red)
+                )
+                .toolbar(content: {
+                    ToolbarItem(placement: .principal) {
+                        Image(uiImage: Assets.Comun.logoPrincipal.image)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 34)
+                    }
+                })
+                .padding(EdgeInsets(top: 0, leading: 30, bottom: 0, trailing: 30))
+                
                 NavigationLink(destination: CreateCuentaView(), isActive: $irACreateCuentaView) {
                     EmptyView()
                 }
@@ -78,10 +90,11 @@ struct BienvenidaView: View {
                 .bold()
                 .foregroundColor(Color.black)
                 .multilineTextAlignment(.center)
-                .padding(.bottom, 10)
+                .padding(.bottom, 20)
             Image(uiImage: bienvenidaModelo.imagen)
                 .resizable()
                 .scaledToFit()
+                .frame(width: 335,height: 267)
         }
     }
 }

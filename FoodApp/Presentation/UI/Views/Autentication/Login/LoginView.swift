@@ -13,46 +13,49 @@ struct LoginView: View {
     @State private var paswordLogin: String = ""
     @State private var irATabPrincipalView = false
     @State private var irAForgotPaswordView = false
+    @State private var loginViewModel : LoginViewModel = LoginViewModel()
     
     var body: some View {
         ZStack{
             Color(Assets.Colours.colorBlancoPantalla.name).ignoresSafeArea()
             VStack{
-                Text("Login to your account")
+                Text(L10n.Login.title)
                     .font(.title)
                     .bold()
                     .foregroundColor(Color.black)
                     .frame(maxWidth: .infinity, alignment: .center)
                     .padding(.bottom,14)
                     .padding(.top,20)
-
-                Text("Good to see you again, enter your details below to continue ordering.")
+                
+                Text(L10n.Login.concepto)
                     .font(.system(size: 16))
                     .frame(maxWidth: .infinity, alignment: .center)
                     .foregroundColor(Color(Assets.Colours.colorPlomeado.name))
                     .padding(.bottom,40)
                 
-                CapsulaParaColocarText(textoSuperior: "Email Address", textoDePlaceHolder: "Enter email", textoBinding: $emailLogin,texto: emailLogin)
+                CapsulaParaColocarText(textoSuperior: L10n.Login.capsulaSuperior, textoDePlaceHolder: L10n.Login.letraAgua, textoBinding: $emailLogin,texto: emailLogin)
                 
-                CapsulaParaColocarText(textoSuperior: "Password", textoDePlaceHolder: "Enter password", textoBinding: $paswordLogin, texto: paswordLogin)
+                CapsulaParaColocarText(textoSuperior: L10n.Login.capsulaDos, textoDePlaceHolder: L10n.Login.letraAguaDos, textoBinding: $paswordLogin, texto: paswordLogin)
                 
                 Spacer()
                 
                 GoogleCapsula()
                 
-                CapsulaNaranja(textoDelBoton: "Create an account", clickEnBoton: {
+                CapsulaNaranja(textoDelBoton: L10n.Login.capsulaNaranja, clickEnBoton: {
+                    loginViewModel.signIn(email: emailLogin, password: paswordLogin)
                     irATabPrincipalView = true
                 })
                 
-                LetraInferiorButton(textoDelBoton: "Login to my account", clickEnBoton: {
+                LetraInferiorButton(textoDelBoton: L10n.Login.letraRoja, clickEnBoton: {
                     irAForgotPaswordView = true
                 })
             }
             .navigationTitle("Login")
             .navigationBarBackButtonHidden(true)
             .navigationBarItems(trailing:
-                Text("Skip")
+                                    Text("Skip")
                 .foregroundColor(Color.red)
+                .underline(true, color: Color.red)
             )
             .toolbar(content: {
                 ToolbarItem(placement: .principal) {
@@ -70,6 +73,9 @@ struct LoginView: View {
             NavigationLink(destination: ForgotPaswordView(), isActive: $irAForgotPaswordView) {
                 EmptyView()
             }
+        }
+        .onReceive(loginViewModel.$irATabPrincipal) { irATabPrincipal in
+            self.irATabPrincipalView = irATabPrincipal
         }
     }
 }

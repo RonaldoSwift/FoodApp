@@ -13,40 +13,42 @@ struct CreateCuentaView: View {
     @State private var confirmPassword: String = ""
     @State private var viajarATabPrincipal: Bool = false
     @State private var viajarALoginView: Bool = false
+    @State private var createCuentaViewModel: CreateCuentaViewModel = CreateCuentaViewModel()
+    @State private var estaCargando: Bool = false
+    @State private var mostrarErrorAlert: Bool = false
 
     var body: some View {
         
         ZStack{
             Color(Assets.Colours.colorBlancoPantalla.name).ignoresSafeArea()
             VStack{
-                //PARTESUPERIOR EN COMPONENTES
-                ParteSuperior()
-                
-                Text("Create an account")
+                Text(L10n.Create.title)
                     .font(.title)
                     .bold()
                     .multilineTextAlignment(.leading)
                     .foregroundColor(Color.black)
-                Text("Welcome friend, enter your details so lets get started in ordering food.")
+                Text(L10n.Create.concepto)
                     .multilineTextAlignment(.leading)
                     .foregroundColor(Color.black)
                     .foregroundColor(Color(Assets.Colours.colorPlomeado.name))
                     .padding(.bottom,30)
                 
-                CapsulaParaColocarText(textoSuperior: "Email Address", textoDePlaceHolder: "Enter email", textoBinding: $email, texto: email)
-                CapsulaParaColocarText(textoSuperior: "Password", textoDePlaceHolder: "Enter password", textoBinding: $password, texto: password)
-                CapsulaParaColocarText(textoSuperior: "Confirm Password", textoDePlaceHolder: "Confirm Password", textoBinding: $confirmPassword, texto: confirmPassword)
+                CapsulaParaColocarText(textoSuperior: L10n.Create.capsulaSuperior, textoDePlaceHolder: L10n.Create.letraAgua, textoBinding: $email, texto: email)
+                CapsulaParaColocarText(textoSuperior: L10n.Create.capsulaDos, textoDePlaceHolder: L10n.Create.letraDosAgua, textoBinding: $password, texto: password)
+                CapsulaParaColocarText(textoSuperior: L10n.Create.capsulaTres, textoDePlaceHolder: L10n.Create.letraTresAgua, textoBinding: $confirmPassword, texto: confirmPassword)
                     .padding(.bottom,30)
-
+                
+                Spacer()
                 
                 GoogleCapsula()
                 
                 //Boton Naranja
-                CapsulaNaranja(textoDelBoton: "Create an account", clickEnBoton: {
+                CapsulaNaranja(textoDelBoton: L10n.Create.capsulaNaranja, clickEnBoton: {
+                    createCuentaViewModel.signUp(email: email, pasword: password)
                     viajarATabPrincipal = true
                 })
                 //Letra roja
-                LetraInferiorButton(textoDelBoton: "Login to my account", clickEnBoton: {
+                LetraInferiorButton(textoDelBoton: L10n.Create.letraRoja, clickEnBoton: {
                     viajarALoginView = true
                 })
                 .padding(.bottom,10)
@@ -54,6 +56,23 @@ struct CreateCuentaView: View {
             }
             .navigationBarBackButtonHidden(true)
             .padding()
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarItems(trailing:
+                                    Text("Skip")
+                .foregroundColor(Color.red)
+                .underline(true, color: Color.red)
+            )
+            .toolbar(content: {
+                ToolbarItem(placement: .principal) {
+                    Image(uiImage: Assets.Comun.logoPrincipal.image)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 34)
+                }
+            })
+            .padding(EdgeInsets(top: 0, leading: 30, bottom: 0, trailing: 30))
+           
+            
             NavigationLink(destination: TabPrincipalView(), isActive: $viajarATabPrincipal) {
                 EmptyView()
             }
@@ -61,6 +80,12 @@ struct CreateCuentaView: View {
             NavigationLink(destination: LoginView(), isActive: $viajarALoginView) {
                 EmptyView()
             }
+        }
+        .alert(isPresented: $mostrarErrorAlert, content: {
+            Alert(title: Text("hubo un error"))
+        })
+        .onReceive(createCuentaViewModel.$irATabPrincipal) { irATabPrincipal in
+            self.viajarATabPrincipal = irATabPrincipal
         }
     }
 }
