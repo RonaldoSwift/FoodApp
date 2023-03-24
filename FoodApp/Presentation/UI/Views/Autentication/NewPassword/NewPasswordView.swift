@@ -13,7 +13,6 @@ struct NewPasswordView: View {
     @State private var irATabPrincipalView = false
     var body: some View {
         ZStack{
-            Color(Assets.Colours.colorBlancoPantalla.name).ignoresSafeArea()
             VStack{
                 
                 Text(L10n.New.titulo)

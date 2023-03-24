@@ -20,7 +20,6 @@ struct CreateCuentaView: View {
     var body: some View {
         
         ZStack{
-            Color(Assets.Colours.colorBlancoPantalla.name).ignoresSafeArea()
             VStack{
                 Text(L10n.Create.title)
                     .font(.title)

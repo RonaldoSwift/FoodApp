@@ -14,7 +14,6 @@ struct ForgotPaswordView: View {
     
     var body: some View {
         ZStack{
-            Color(Assets.Colours.colorBlancoPantalla.name).ignoresSafeArea()
             VStack{
                 Text(L10n.Forgot.titulo)
                     .font(.title)

@@ -5,12 +5,14 @@
 //  Created by Ronaldo on 14/03/23.
 //
 
+import FirebaseAuth
 import SwiftUI
 
 struct BienvenidaView: View {
     @State var index = 0
     @State private var irACreateCuentaView: Bool = false
     @State private var irALoginView: Bool = false
+    @State private var irATabPrincipal: Bool = false
     
     var modelos: [BienvenidaModelo] = [
         BienvenidaModelo.init(
@@ -58,7 +60,7 @@ struct BienvenidaView: View {
                 .padding()
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationBarItems(trailing:
-                    Text("Skip")
+                                        Text("Skip")
                     .foregroundColor(Color.red)
                     .underline(true, color: Color.red)
                 )
@@ -78,24 +80,33 @@ struct BienvenidaView: View {
                 NavigationLink(destination: LoginView(), isActive: $irALoginView) {
                     EmptyView()
                 }
-                
+                NavigationLink(destination: TabPrincipalView(), isActive: $irATabPrincipal) {
+                    EmptyView()
+                }
+            }
+        }
+        .onAppear{
+            Auth.auth().addStateDidChangeListener { (_:Auth, user:User?) in
+                if user != nil{ //Entra al if si el usuario esta logeado
+                    irATabPrincipal = true
+                }
             }
         }
     }
-    
-    private func CeldaBienvenida(bienvenidaModelo:BienvenidaModelo)-> some View{
-        return VStack{
-            Text(bienvenidaModelo.titulo)
-                .font(.title2)
-                .bold()
-                .foregroundColor(Color.black)
-                .multilineTextAlignment(.center)
-                .padding(.bottom, 20)
-            Image(uiImage: bienvenidaModelo.imagen)
-                .resizable()
-                .scaledToFit()
-                .frame(width: 335,height: 267)
-        }
+}
+
+private func CeldaBienvenida(bienvenidaModelo:BienvenidaModelo)-> some View{
+    return VStack{
+        Text(bienvenidaModelo.titulo)
+            .font(.title2)
+            .bold()
+            .foregroundColor(Color.black)
+            .multilineTextAlignment(.center)
+            .padding(.bottom, 20)
+        Image(uiImage: bienvenidaModelo.imagen)
+            .resizable()
+            .scaledToFit()
+            .frame(width: 335,height: 267)
     }
 }
 

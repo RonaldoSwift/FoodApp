@@ -11,20 +11,51 @@ struct TabPrincipalView: View {
     @State private var mostrarBottomSheet = false
     @EnvironmentObject private var appSharedViewModel: AppSharedViewModel
     
+    @State private var selectionItem = 1
     var body: some View {
-        VStack{
-            
-            
-            
-            Text("TabPrincipal")
-            
+        TabView(selection: $selectionItem) {
+            HomeView()
+                .tabItem {
+                    Label("", systemImage: "house.fill")
+                }
+                .tag(1)
+            LikeView()
+                .tabItem {
+                    Label("", systemImage: "heart.fill")
+                }
+                .tag(2)
+            LupaView()
+                .tabItem {
+                    Label("", systemImage: "magnifyingglass")
+                }
+                .tag(3)
+            NotificationView()
+                .tabItem {
+                    Label("", systemImage: "bell.fill")
+                }
+                .tag(4)
+            CarritoView()
+                .tabItem {
+                    Label("",systemImage: "cart.fill")
+                }
+                .tag(5)
         }
+        .accentColor(Color.red)
         .navigationBarBackButtonHidden(true)
+        .toolbar {
+            ToolbarItem(placement: .principal) {
+                VStack{
+                    Text("DELIVERY")
+                    Text("ADSADV")
+                }
+                .foregroundColor(Color.black)
+            }
+        }
         .navigationBarItems(
-            trailing: Button(action: {
+            leading: Image(systemName: "square.and.arrow.up.fill"), trailing: Button(action: {
                 mostrarBottomSheet = true
             }, label: {
-                Image("LogoPrincipal")
+                Image("Emoji")
             })
         )
         .sheet(isPresented: $mostrarBottomSheet) {
@@ -34,6 +65,7 @@ struct TabPrincipalView: View {
                 Text("Cerrar Session")
             }
         }
+        
     }
 }
 

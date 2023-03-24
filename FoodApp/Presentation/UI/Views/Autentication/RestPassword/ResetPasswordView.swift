@@ -12,7 +12,6 @@ struct ResetPasswordView: View {
     
     var body: some View {
         ZStack{
-            Color(Assets.Colours.colorBlancoPantalla.name).ignoresSafeArea()
             VStack{
                 Text(L10n.Reset
                     .titulo)
